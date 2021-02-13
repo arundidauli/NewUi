@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginRegisterActivity">
+
+    <ImageView
+        android:id="@+id/img_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:foreground="@drawable/background_black_gradation"
+        android:src="@mipmap/dating"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/shape_curve"
+        android:layout_below="@+id/img_header">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:padding="@dimen/dimen_16dp"
+                    android:text="@string/login_register"
+                    android:gravity="center_horizontal" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="8sp"
+                    app:cardCornerRadius="20dp">
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:background="@null"
+                        android:hint="Full Name"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:paddingEnd="@dimen/dimen_16dp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="8sp"
+                    app:cardCornerRadius="20dp">
+                    <EditText
+                        android:id="@+id/et_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:background="@null"
+                        android:hint="Mobile No"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:paddingEnd="@dimen/dimen_16dp"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="8sp"
+                    app:cardCornerRadius="20dp">
+                    <TextView
+                        android:id="@+id/btn_continue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:text="Continue"
+                        android:textAlignment="center"
+                        android:background="@color/purple_500"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:paddingStart="@dimen/dimen_16dp"
+                        android:paddingEnd="@dimen/dimen_16dp"
+                        android:gravity="center_horizontal" />
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="6sp"
+                    android:text="@string/login_register_mean_you_agree_with_our_terms_and_conditions"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
