@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Salon Barber &amp; Spa</string>
-    <string name="book_an_appointment_for_salon_barber_spa"><![CDATA[Book an appointment for Salon Barber & Spa]]></string>
+    <string name="app_name">Love2knot</string>
+    <string name="book_an_appointment_for_salon_barber_spa">Love2knot app for finding a better match.</string>
     <string name="login_register"><![CDATA[Login & Register]]></string>
     <string name="login_register_mean_you_agree_with_our_terms_and_conditions"><![CDATA[Login & Register mean you agree with our terms and conditions]]></string>
+    <string name="shop_now">Shop Now</string>
 </resources>

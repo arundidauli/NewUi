@@ -8,12 +8,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wingshield.technologies.newui.R;
-import com.wingshield.technologies.newui.adapter.CategoryAdapter;
-import com.wingshield.technologies.newui.model.CategoryData;
+import com.wingshield.technologies.newui.model.ChatUsers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +22,15 @@ import java.util.List;
  * Copyright (c) 2020 wing shield technologies.com All rights reserved.
  */
 
-public class HomeFragment extends BaseFragment {
-    private static final String TAG = HomeFragment.class.getSimpleName();
-    private List<CategoryData> categoryDataList;
-    private RecyclerView rv_category;
+public class StoriesFragment extends BaseFragment {
+
+    private static final String TAG = StoriesFragment.class.getSimpleName();
+    private List<ChatUsers> chatUsersList;
+    private RecyclerView rvChats;
     private Context context;
 
 
-    public HomeFragment() {
+    public StoriesFragment() {
 
     }
 
@@ -45,24 +44,16 @@ public class HomeFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_stories, container, false);
         context = getActivity();
-        categoryDataList = new ArrayList<>();
-        rv_category = view.findViewById(R.id.rv_category);
-        setRecyclerViewCategory(categoryDataList);
+        chatUsersList = new ArrayList<>();
+        //  rvChats = view.findViewById(R.id.rvChats);
+
+        // setChatsAdapter();
 
         return view;
     }
 
-
-    /**
-     * Set Gallery Image in RecyclerView
-     */
-    private void setRecyclerViewCategory(List<CategoryData> categoryDataList) {
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        rv_category.setLayoutManager(mLayoutManager);
-        rv_category.setAdapter(new CategoryAdapter(context, categoryDataList));
-    }
 
    /* private void setChatsAdapter() {
         rvChats.setLayoutManager(new LinearLayoutManager(context));
