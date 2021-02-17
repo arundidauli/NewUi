@@ -12,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 import com.wingshield.technologies.newui.R;
 import com.wingshield.technologies.newui.fragment.StoriesFragment;
+import com.wingshield.technologies.newui.model.Stories;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,24 +20,31 @@ import java.util.List;
 public class StoriesActivity extends AppCompatActivity {
 
     ViewPagerAdapter viewPagerAdapter;
+    List<Stories> storiesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stories);
-
+        storiesList = new ArrayList<>();
         DotsIndicator dotsIndicator = findViewById(R.id.dots_indicator);
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        for (int i = 0; i < 10; i++) {
-            viewPagerAdapter.addFragment(new StoriesFragment(), "Hello");
+        demo_data();
+        for (int i = 0; i < storiesList.size(); i++) {
+            viewPagerAdapter.addFragment(new StoriesFragment(storiesList.get(i).getImage_url()));
             viewPager.setAdapter(viewPagerAdapter);
 
         }
         dotsIndicator.setViewPager(viewPager);
+    }
 
-
+    private void demo_data() {
+        storiesList.add(new Stories("1", "https://www.wingshieldtechnologies.com/loveknot_api/uploads/userprofile/6009154877db5.png"));
+        storiesList.add(new Stories("2", "https://www.wingshieldtechnologies.com/loveknot_api/uploads/userprofile/6009154877db5.png"));
+        storiesList.add(new Stories("3", "https://www.wingshieldtechnologies.com/loveknot_api/uploads/userprofile/6009154877db5.png"));
+        storiesList.add(new Stories("4", "https://www.wingshieldtechnologies.com/loveknot_api/uploads/userprofile/6009154877db5.png"));
+        storiesList.add(new Stories("5", "https://www.wingshieldtechnologies.com/loveknot_api/uploads/userprofile/6009154877db5.png"));
     }
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -59,9 +67,9 @@ public class StoriesActivity extends AppCompatActivity {
         }
 
 
-        void addFragment(Fragment fragment, String title) {
+        void addFragment(Fragment fragment) {
             mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
+
         }
 
         @Override

@@ -5,16 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.wingshield.technologies.newui.R;
-import com.wingshield.technologies.newui.model.ChatUsers;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -25,10 +22,13 @@ import java.util.List;
 public class StoriesFragment extends BaseFragment {
 
     private static final String TAG = StoriesFragment.class.getSimpleName();
-    private List<ChatUsers> chatUsersList;
-    private RecyclerView rvChats;
     private Context context;
+    private String image_url;
 
+
+    public StoriesFragment(String image_url) {
+        this.image_url = image_url;
+    }
 
     public StoriesFragment() {
 
@@ -46,24 +46,15 @@ public class StoriesFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
         context = getActivity();
-        chatUsersList = new ArrayList<>();
-        //  rvChats = view.findViewById(R.id.rvChats);
+        ImageView image_view = view.findViewById(R.id.image_view);
 
-        // setChatsAdapter();
+        Glide.with(context).load(image_url).into(image_view);
+
 
         return view;
     }
 
 
-   /* private void setChatsAdapter() {
-        rvChats.setLayoutManager(new LinearLayoutManager(context));
-        SlideInRightAnimationAdapter alphaInAnimationAdapter = new SlideInRightAnimationAdapter(new ChatsAdapter(context, chatUsersList));
-        alphaInAnimationAdapter.setDuration(1000);
-        alphaInAnimationAdapter.setInterpolator(new DecelerateInterpolator());
-        alphaInAnimationAdapter.setFirstOnly(false);
-        rvChats.setAdapter(new ScaleInAnimationAdapter(alphaInAnimationAdapter));
-        rvChats.setAdapter(alphaInAnimationAdapter);
-    }*/
 
 
 }

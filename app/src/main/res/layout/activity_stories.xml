@@ -22,7 +22,6 @@
         android:layout_margin="@dimen/dimen_16dp"
         app:dotsColor="@color/purple_200"
         app:dotsCornerRadius="@dimen/padding_8dp"
-
         app:dotsSize="@dimen/padding_8dp"
         app:dotsSpacing="@dimen/padding_4sp"
         app:progressMode="true"
